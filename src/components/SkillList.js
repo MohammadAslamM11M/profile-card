@@ -1,16 +1,51 @@
 import Skill from "./Skill";
 
 const SkillList = () => {
-    return (
-        <div className="cardTags">
-            <Skill skill="HTML+CSS" emoji="💪" color="hotpink" />
-            <Skill skill="Javascript" emoji="💪" color="lavender" />
-            <Skill skill="Web Design" emoji="💪" color="Wheat" />
-            <Skill skill="Git and GitHub" emoji="👍" color="gold" />
-            <Skill skill="React" emoji="💪" color="skyblue" />
-        </div>
-
-    )
+  const skills = [
+    {
+      skill: "HTML+CSS",
+      level: "advanced",
+      color: "#2662ea",
+    },
+    {
+      skill: "JavaScript",
+      level: "advanced",
+      color: "#efd81d",
+    },
+    {
+      skill: "Web Design",
+      level: "advanced",
+      color: "#c3dcaf",
+    },
+    {
+      skill: "Git and GitHub",
+      level: "intermediate",
+      color: "#e84f33",
+    },
+    {
+      skill: "React",
+      level: "advanced",
+      color: "#60dafb",
+    },
+    {
+      skill: "Svelte",
+      level: "beginner",
+      color: "#ee8300",
+    },
+  ];
+  return (
+    <div className="cardTags">
+      {skills.map((s) => (
+        <ul key={s.id}>
+          <Skill
+            skill={s.skill}
+            level={s.level}
+            color={s.color}
+          />
+        </ul>
+      ))}
+    </div>
+  );
 };
 
 export default SkillList;
