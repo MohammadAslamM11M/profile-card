@@ -1,13 +1,24 @@
-const Skill = (props) => {
+const Skill = ({skill, level, color}) => {
   return (
-    <div className="tags" style={{ backgroundColor: props.color }}>
+    <div className="tags" style={{ backgroundColor: color }}>
       <span>
-        {props.skill}{" "}
-        {props.level === "advanced"
+        {skill}{" "}
+
+        {/* Ternary operator method */}
+        
+        {/* {level === "advanced"
           ? "💪"
-          : props.level === "intermediate"
+          : level === "intermediate"
             ? "👍"
-            : "👶"}
+            : "👶"} */}
+      
+        {/* Short circuiting method */}
+
+        <span>
+            {level === "beginner" && "👶"}
+            {level === "intermediate" && "👍"}
+            {level === "advanced" && "💪"}
+        </span>
       </span>
     </div>
   );
